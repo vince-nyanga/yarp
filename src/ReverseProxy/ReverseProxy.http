@@ -1,0 +1,19 @@
+@ReverseProxy_HostAddress = http://localhost:5145
+
+### Get Weather
+GET {{ReverseProxy_HostAddress}}/weather/
+Accept: application/json
+
+### Get Todos
+GET {{ReverseProxy_HostAddress}}/todos/
+
+### Add Todo
+POST {{ReverseProxy_HostAddress}}/todos/
+Content-Type: application/json
+
+{
+  "title": "Testing"
+}
+
+### Complete todo
+PATCH {{ReverseProxy_HostAddress}}/todos/9e6dc055-7bee-4a3b-9a68-b49799bef91f/complete
